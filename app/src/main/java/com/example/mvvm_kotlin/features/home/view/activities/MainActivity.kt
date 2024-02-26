@@ -1,4 +1,4 @@
-package com.example.mvvm_kotlin.features.auth.view.activities
+package com.example.mvvm_kotlin.features.home.view.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

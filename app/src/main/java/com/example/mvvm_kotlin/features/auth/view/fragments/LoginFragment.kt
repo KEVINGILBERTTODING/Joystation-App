@@ -50,7 +50,13 @@ class LoginFragment : Fragment() {
         binding.btnLogin.setOnClickListener {
             inputValidation()
         }
+
+        binding.btnRegister.setOnClickListener {
+            fragmentTransaction(RegisterFragment())
+        }
     }
+
+
 
     private fun setUpObservers() {
 
@@ -64,8 +70,7 @@ class LoginFragment : Fragment() {
     private fun handleLoginResult(result: AuthRepository.RepositoryResource<AuthModel?>) {
         if (result is AuthRepository.RepositoryResource.Success) {
             val authModel = result.data
-            val erromessage = authModel?.email ?: "Jhon Doe"
-            showToast(erromessage)
+
         }else if (result is AuthRepository.RepositoryResource.Error) {
             val errorMessage = result.message
             showToast(errorMessage)
@@ -113,6 +118,13 @@ class LoginFragment : Fragment() {
         authViewModel.login(email, password)
 
 
+    }
+
+    private fun fragmentTransaction(fragment: Fragment) {
+
+       parentFragmentManager.beginTransaction()
+            .replace(R.id.frameLayout, fragment)
+            .commit()
     }
 
     private fun isValidEmail(email: String) : Boolean {

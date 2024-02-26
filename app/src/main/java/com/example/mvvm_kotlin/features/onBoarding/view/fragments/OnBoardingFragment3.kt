@@ -6,9 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.mvvm_kotlin.R
 import com.example.mvvm_kotlin.databinding.FragmentOnBoarding3Binding
-import com.example.mvvm_kotlin.features.auth.view.activities.AuthActivities
+import com.example.mvvm_kotlin.features.auth.view.activities.AuthActivity
 
 class OnBoardingFragment3 : Fragment() {
 
@@ -32,7 +31,7 @@ class OnBoardingFragment3 : Fragment() {
 
     private fun listener() {
         binding.btnStart.setOnClickListener {
-            val intent = Intent(context, AuthActivities::class.java)
+            val intent = Intent(context, AuthActivity::class.java)
             startActivity(intent)
             requireActivity().finish()
         }

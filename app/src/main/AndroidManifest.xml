@@ -22,10 +22,10 @@
             android:name=".features.onBoarding.view.activities.OnBoardingActivity"
             android:exported="false" />
         <activity
-            android:name=".features.auth.view.activities.MainActivity"
+            android:name=".features.home.view.activities.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".features.auth.view.activities.AuthActivities"
+            android:name=".features.auth.view.activities.AuthActivity"
             android:exported="false" />
         <activity
             android:name=".features.splashScreen.view.activities.SplashScreenActivity"

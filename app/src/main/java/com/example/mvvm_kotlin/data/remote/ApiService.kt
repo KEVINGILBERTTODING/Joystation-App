@@ -4,7 +4,9 @@ import com.example.mvvm_kotlin.features.auth.model.AuthModel
 import com.example.mvvm_kotlin.features.auth.model.ResponseModel
 import retrofit2.Call
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.Field
+import retrofit2.http.FieldMap
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
@@ -21,5 +23,11 @@ interface ApiService {
         @Field("password") password: String
     ) : Response<ResponseModel<AuthModel>>
 
+
+    @POST("auth/register")
+    @JvmSuppressWildcards
+    suspend fun register(
+        @Body map: Map<String, Any>
+    ) : Response<ResponseModel<AuthModel>>
 
 }

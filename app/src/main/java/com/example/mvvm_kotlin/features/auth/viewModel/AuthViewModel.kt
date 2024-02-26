@@ -24,7 +24,41 @@ class AuthViewModel @Inject constructor(private val authRepository: AuthReposito
                 _loginResult.value = authRepository.login(email, password)
             }
         } else {
-            _loginResult.value = AuthRepository.RepositoryResource.Error("Invalid email or password format")  // Perbarui di sini
+            _loginResult.value = AuthRepository.RepositoryResource.Error("Email dan password tidak valid")  // Perbarui di sini
+        }
+    }
+
+
+
+    private val _registerResult = MutableLiveData<AuthRepository.RepositoryResource<AuthModel?>> ()
+    val registerResult : LiveData<AuthRepository.RepositoryResource<AuthModel?>> get() = _registerResult
+
+    fun register(map: Map<String, Any>) {
+        if (map != null ) {
+            if (!isValidEmail(map.get("email").toString())) {
+                _registerResult.value = AuthRepository.RepositoryResource.Error("Format email tidak valid")
+            }
+
+
+
+            if (!isValidPhoneNumber(map.get("phone_number").toString())) {
+                _registerResult.value = AuthRepository.RepositoryResource.Error("Format no hp tidak valid")
+
+            }
+
+            if (!isValidPassword(map.get("password").toString())) {
+                _registerResult.value = AuthRepository.RepositoryResource.Error("Format password tidak valid")
+            }
+
+            viewModelScope.launch {
+                _registerResult.value = AuthRepository.RepositoryResource.Loading
+                _registerResult.value = authRepository.register(map)
+            }
+
+
+
+        }else {
+            _registerResult.value = AuthRepository.RepositoryResource.Error("Data tidak valid!")
         }
     }
 
@@ -36,7 +70,16 @@ class AuthViewModel @Inject constructor(private val authRepository: AuthReposito
         return email.matches(emailRegex)
     }
 
+
+    private fun isValidPhoneNumber (phone: String) : Boolean {
+        val regex = Regex("^[0-9]+$")
+        return regex.matches(phone)
+    }
+
+
+
     private fun isValidPassword(password: String): Boolean {
         return password.length >= 8
     }
+
 }

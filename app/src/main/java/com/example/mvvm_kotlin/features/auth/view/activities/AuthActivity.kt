@@ -9,7 +9,7 @@ import com.example.mvvm_kotlin.features.auth.view.fragments.LoginFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AuthActivities : AppCompatActivity() {
+class AuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthActivitiesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
