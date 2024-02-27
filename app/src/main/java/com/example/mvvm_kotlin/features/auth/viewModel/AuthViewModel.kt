@@ -37,6 +37,7 @@ class AuthViewModel @Inject constructor(private val authRepository: AuthReposito
         if (map != null ) {
             if (!isValidEmail(map.get("email").toString())) {
                 _registerResult.value = AuthRepository.RepositoryResource.Error("Format email tidak valid")
+
             }
 
 
@@ -44,10 +45,12 @@ class AuthViewModel @Inject constructor(private val authRepository: AuthReposito
             if (!isValidPhoneNumber(map.get("phone_number").toString())) {
                 _registerResult.value = AuthRepository.RepositoryResource.Error("Format no hp tidak valid")
 
+
             }
 
             if (!isValidPassword(map.get("password").toString())) {
                 _registerResult.value = AuthRepository.RepositoryResource.Error("Format password tidak valid")
+
             }
 
             viewModelScope.launch {
@@ -59,6 +62,7 @@ class AuthViewModel @Inject constructor(private val authRepository: AuthReposito
 
         }else {
             _registerResult.value = AuthRepository.RepositoryResource.Error("Data tidak valid!")
+
         }
     }
 
