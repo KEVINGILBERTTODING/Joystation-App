@@ -3,5 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main">#3949AB</color>
-    <color name="bg">#171717</color>
+    <color name="bg">#0C131C</color>
+    <color name="card">#171E26</color>
+    <color name="purple">#7F0CFF</color>
+    <color name="pink">#CE14EC</color>
 </resources>

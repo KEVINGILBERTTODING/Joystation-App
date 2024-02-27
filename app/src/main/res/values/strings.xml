@@ -2,4 +2,19 @@
     <string name="app_name">MVVM-Kotlin</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="onboarding_1">
+        Rental PS Termurah dan Ternyaman. Nikmati berbagai game ps favorit Anda dengan harga terjangkau dan kenyamanan maksimal.
+    </string>
+
+    <string name="onboarding_2">
+        Anda dapat mengikuti event championship. Tunjukkan skill Anda dan raih hadiah menarik dari berbagai turnamen game ps yang kami selenggarakan.
+    </string>
+
+    <string name="onboarding_3">
+        Anda dapat memesan makanan dan minuman yang Anda suka dan membayar dengan berbagai metode, seperti transfer, e-wallet, atau kartu kredit.
+    </string>
+
+    <string name="onboarding_4">
+        Tunggu apa lagi? mari bergabung bersama kami sekarang!
+    </string>
 </resources>

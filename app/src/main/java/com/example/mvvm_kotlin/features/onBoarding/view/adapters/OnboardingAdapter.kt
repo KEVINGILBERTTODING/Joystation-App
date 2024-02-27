@@ -6,10 +6,11 @@ import com.example.mvvm_kotlin.features.onBoarding.view.activities.OnBoardingAct
 import com.example.mvvm_kotlin.features.onBoarding.view.fragments.OnBoardingFragment1
 import com.example.mvvm_kotlin.features.onBoarding.view.fragments.OnBoardingFragment2
 import com.example.mvvm_kotlin.features.onBoarding.view.fragments.OnBoardingFragment3
+import com.example.mvvm_kotlin.features.onBoarding.view.fragments.OnBoardingFragment4
 
 class OnboardingAdapter (onBoardingActivity: OnBoardingActivity) :FragmentStateAdapter(onBoardingActivity) {
     override fun getItemCount(): Int {
-        return 3
+        return 4
     }
 
     override fun createFragment(position: Int): Fragment {
@@ -19,7 +20,11 @@ class OnboardingAdapter (onBoardingActivity: OnBoardingActivity) :FragmentStateA
             return OnBoardingFragment2()
         }else if (position == 2) {
             return OnBoardingFragment3()
-        }else {
+        }else if (position == 3) {
+            return OnBoardingFragment4()
+        }
+
+        else {
             throw IllegalAccessException("Invalid position: $position")
         }
     }
